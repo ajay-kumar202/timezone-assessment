@@ -12,10 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->call(function () {
-            // Check for scheduled notifications and log them
-            // Remember to handle timezones here
-        })->everyMinute();
+        $schedule->command('user:notification')->daily();
     }
 
     /**
