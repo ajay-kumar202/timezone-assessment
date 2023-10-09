@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('user_notifications', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->time('scheduled_at'); // 24-hour format
+            $table->dateTime('scheduled_at'); // 24-hour format
             $table->string('frequency'); // e.g., daily, weekly, monthly, or custom
             $table->text('notification_message')->nullable(); // You can customize this field
             $table->timestamps();
